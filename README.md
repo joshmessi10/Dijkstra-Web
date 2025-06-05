@@ -40,7 +40,7 @@ An interactive **web application** to build, edit, and visualize graphs with sup
 
 ## 📸 Screenshot Preview
 
-![Graph UI](https://github.com/YOUR_USERNAME/YOUR_REPO_NAME/assets/example-image.png)
+![Image](https://github.com/user-attachments/assets/0555d1a9-0863-4f5f-92a6-82cb040f2e1b)
 
 ## 📚 Educational Value
 
