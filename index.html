@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Segundo Parcial: Grafo Web</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/cytoscape@3.22.0/dist/cytoscape.min.js"></script>
+</head>
+<body>
+  <h1 style="text-align: center;">Dijkstra Web</h1>
+  <div class="main-container">
+    <!-- Instrucciones de uso (Columna izquierda) -->
+    <section id="instructions">
+      <h2>Instrucciones de uso</h2>
+      <ul>
+        <li><strong>Añadir Nodo:</strong> Haz clic en el botón "Añadir Nodo" e ingresa un nombre y duración para el nuevo nodo.</li>
+        <li><strong>Eliminar Nodo:</strong> Haz clic en el botón "Eliminar Nodo" e ingresa el nombre del nodo que deseas eliminar.</li>
+        <li><strong>Añadir Arco:</strong> Haz clic en el botón "Añadir Arco" e ingresa los nombres de los nodos de origen y destino, así como el costo del arco. Después de añadir un arco, puedes elegir si el arco debe ser un <strong>Arco Bidireccional.</strong></li>
+        <li><strong>Eliminar Arco:</strong> Haz clic en el botón "Eliminar Arco" e ingresa los nombres de los nodos de origen y destino para eliminar el arco correspondiente.</li>
+        <li><strong>Modificar Nodo o Arco:</strong> Haz clic sobre un nodo o arco para cambiar su nombre y su duración (para los nodos) o su costo (para los arcos).</li>
+        <li><strong>Interacción:</strong> Puedes mover los nodos dentro del grafo utilizando el mouse y hacer zoom con la rueda del ratón.</li>
+        <li><strong>Añadir Grafo Aleatorio:</strong> Haz clic en el botón "Añadir Grafo Aleatorio" e ingresa el número de nodos para generar un grafo aleatorio con conexiones entre ellos.</li>
+        <li><strong>Eliminar Todo:</strong> Haz clic en el botón "Eliminar Todo" para borrar completamente el grafo actual.</li>
+        <li><strong>Algoritmo de Dijkstra:</strong> Haz clic en el botón "Algoritmo de Dijkstra" e ingresa el nodo de inicio y el nodo de destino. El grafo resaltará en verde el camino más corto entre los dos nodos seleccionados. Si ya hay bordes resaltados, estos se eliminarán antes de calcular el nuevo camino.</li>
+        <li><strong>Ruta Crítica:</strong> Haz clic en el botón "Ruta Crítica" e ingresa el nodo de inicio y el nodo de destino. El grafo resaltará en rojo la ruta crítica (el camino más largo en términos de duración o costo) entre los dos nodos seleccionados. Si ya hay bordes resaltados, estos se eliminarán antes de calcular la nueva ruta.</li>
+        <li><strong>Exportar Grafo:</strong> Haz clic en el botón "Exportar Grafo" para descargar el grafo actual como un archivo JSON. Este archivo puede ser importado más tarde para restaurar el grafo.</li>
+        <li><strong>Importar Grafo:</strong> Haz clic en el botón "Importar Grafo" y selecciona un archivo JSON previamente exportado. El grafo se cargará con los nodos, arcos y estilos definidos en el archivo.</li>
+        <li><strong>Exportar Imagen:</strong> Haz clic en el botón "Exportar Imagen" para descargar una imagen PNG del grafo actual. La imagen incluirá todos los nodos y arcos visibles en el grafo.</li>
+      </ul>
+    </section>
+    
+    <!-- Contenedor del grafo y controles (Columna derecha) -->
+    <div class="graph-container">
+      <div id="rutaOutput" style="margin-bottom: 10px; font-size: 16px; font-weight: bold; color: #333;">
+      </div>
+      <div id="cy"></div>
+
+      <!-- Controles para interactuar con el grafo -->
+      <section id="controls">
+        <button id="addNode">Añadir Nodo</button>
+        <button id="removeNode">Eliminar Nodo</button>
+        <button id="addEdge">Añadir Arco</button>
+        <button id="removeEdge">Eliminar Arco</button>
+        <button id="addRandomGraph">Añadir Grafo Aleatorio</button>
+        <button id="clearGraph">Eliminar Todo</button>
+        <button id="dijkstra">Algoritmo de Dijkstra</button>
+        <button id="criticalPath">Ruta Crítica</button>
+        <button id="exportGraph">Exportar Grafo</button>
+        <button id="importGraph">Importar Grafo</button>
+        <button id="exportImage">Exportar Imagen</button>
+      </section>
+      <h3>Matriz de Adyacencia</h3>
+      <pre id="matrizOutput"></pre>
+      <h3>Matriz de Incidencia</h3>
+      <pre id="matrizIncidenciaOutput"></pre>
+    </div>
+  </div>
+
+  <!-- Datos en el Footer -->
+  <footer id="footer">
+    <p>Josh Sebastián López Murcia</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
